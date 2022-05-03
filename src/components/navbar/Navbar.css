@@ -1,0 +1,21 @@
+#error_message {
+    color: red;
+    padding-right: 20px;
+}
+
+.nav-components {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+@media (max-width: 989px) {
+    .nav-components {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .current-location {
+        margin-top: 20px;
+    }
+}
