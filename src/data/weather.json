@@ -1,12 +1,12 @@
 {
     "main": {
         "temp" : "9",
-        "humidity" : "Humidity: 84%",
+        "humidity" : "84",
         "weather" : {
             "description" : "Overcast Clouds",
             "icon" : "https://openweathermap.org/img/wn/04d@2x.png"
         },
-        "speed" : "3 mph"
+        "speed" : "3"
         
     }, 
     "daily" : [

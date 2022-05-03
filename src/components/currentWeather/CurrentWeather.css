@@ -1,0 +1,7 @@
+#current_condition {
+    text-transform: capitalize;
+}
+
+#current_temp {
+    padding-left: 10px;
+}

@@ -11,9 +11,9 @@ export const UpdateDate = () => {
             minute: "2-digit"
         })
     return (
-        <h1>
-            {fromatedDate}
-        </h1>
+        <>
+            {fromatedDate} 
+        </>
     )
 }
 
@@ -21,8 +21,8 @@ export const ConvertDate = (date) => {
     let day = new Date(date * 1000)
     day = day.toLocaleDateString('en-us' ,{weekday: "short"}).split(' ')[0]
     return (
-        <div>
+        <>
             {day}
-        </div>
+        </>
     )
 }
