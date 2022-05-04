@@ -1,12 +1,23 @@
 import React, {useContext} from 'react'
 import './CurrentWeather.css'
-import { WeatherContext } from '../../App'
+import { WeatherContext, ConvertTempContext} from '../../App'
 import { UpdateDate } from '../utilites/time'
+import { converToFerinhit } from '../utilites/convertTemp'
+
 
 const CurrentWeather = () => {
 
   const [weather, setWeather] = useContext(WeatherContext)
+  const [convertTemp, setConvertTemp] = useContext(ConvertTempContext)
 
+  const onClickConvertTemp = (e) => {
+    e.preventDefault()
+    if(convertTemp) {
+        setConvertTemp(false);
+    } else {
+        setConvertTemp(true);
+    }
+  }
   return (
     <div className="card mt-3">
         <div className="row">
@@ -19,7 +30,18 @@ const CurrentWeather = () => {
                 <div className="d-flex flex-column m-4">
                     <h2>
                         <UpdateDate />
-                        <span id="current_temp">{weather.main.temp}</span>°<a href="#" id="convert">C</a>
+                        {convertTemp ? (
+                        <>
+                        <span id="current_temp">{converToFerinhit(weather.main.temp)}</span>
+                        °
+                        <a href="#" id="convert" onClick={onClickConvertTemp}>F</a>
+                        </>
+                        ) : (
+                        <>
+                        <span id="current_temp">{weather.main.temp}</span>°
+                        <a href="#" id="convert" onClick={onClickConvertTemp}>C</a>
+                        </>
+                        )}
                     </h2>
                     <p>Humidity: <span>{weather.main.humidity}</span>%</p>
                     <p>Wind: <span>{weather.main.speed}</span> mph</p>
