@@ -4,7 +4,7 @@ import { AiFillGithub } from 'react-icons/ai'
 
 const Footer = () => {
   return (
-    <footer class='footer'>
+    <footer className='footer'>
         <a id="github-link" href="https://github.com/ErinCleaver-GRCC/weather-app-react"><AiFillGithub /> Weather Application Git Hub</a>, By Erin Cleaver 
     </footer>
 
