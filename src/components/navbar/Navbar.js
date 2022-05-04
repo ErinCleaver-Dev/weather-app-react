@@ -34,8 +34,14 @@ const Navbar = () => {
   const GetGeoLocation = (e) => {
       e.preventDefault()
 
-      
+      navigator.geolocation.getCurrentPosition((position) => {
+          let location = {
+              lat: position.coords.latitude,
+              long: position.coords.longitude
+          }
 
+          console.log(location)
+      })
   }
 
   const [city, setCity] = useState("City, State")
