@@ -31,6 +31,13 @@ const Navbar = () => {
       }
   }
 
+  const GetGeoLocation = (e) => {
+      e.preventDefault()
+
+      
+
+  }
+
   const [city, setCity] = useState("City, State")
   const [error, setError] = useState(false)
 
@@ -52,7 +59,7 @@ const Navbar = () => {
                             {error ? (<p id="error_message">Please enter a city name</p>) : (<></>)}
                         </div>
                     </form>
-                    <button className="btn btn-lg btn-outline-light current-location" type="button">Current Location</button>
+                    <button className="btn btn-lg btn-outline-light current-location" onClick={GetGeoLocation} type="button">Current Location</button>
                 </div>    
             </div>
         </div>
