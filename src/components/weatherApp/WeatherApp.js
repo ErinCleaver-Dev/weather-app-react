@@ -8,6 +8,7 @@ import './WeatherApp.css'
 
 
 const WeatherApp = () => {
+  // gets the weather conttext to verify that the data has loaded.
   const [weather, setWeather] = useContext(WeatherContext)
 
   return (

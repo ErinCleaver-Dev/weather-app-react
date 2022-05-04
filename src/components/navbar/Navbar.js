@@ -4,10 +4,8 @@ import weatherData from '../../data/weather.json'
 import { WeatherContext } from '../../App'
 
 const Navbar = () => {
-  
 
   const [weather, setWeather] = useContext(WeatherContext)
-
 
   useEffect(() => {
     setWeather(weatherData)

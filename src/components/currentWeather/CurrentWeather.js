@@ -2,14 +2,19 @@ import React, {useContext} from 'react'
 import './CurrentWeather.css'
 import { WeatherContext, ConvertTempContext} from '../../App'
 import { UpdateDate } from '../utilites/time'
-import { converToFerinhit } from '../utilites/convertTemp'
+import { converToFahrenheit } from '../utilites/convertTemp'
 
 
 const CurrentWeather = () => {
 
+  // Used to get the weather data
   const [weather, setWeather] = useContext(WeatherContext)
+  
+  // Used to covert tempture in multiple locations in the app.
   const [convertTemp, setConvertTemp] = useContext(ConvertTempContext)
 
+
+  // An on click event for converting the temp.  It updates the weather context in the CurrentWeather and ForecastCard.  
   const onClickConvertTemp = (e) => {
     e.preventDefault()
     if(convertTemp) {
@@ -18,6 +23,8 @@ const CurrentWeather = () => {
         setConvertTemp(true);
     }
   }
+
+
   return (
     <div className="card mt-3">
         <div className="row">
@@ -32,7 +39,7 @@ const CurrentWeather = () => {
                         <UpdateDate />
                         {convertTemp ? (
                         <>
-                        <span id="current_temp">{converToFerinhit(weather.main.temp)}</span>
+                        <span id="current_temp">{converToFahrenheit(weather.main.temp)}</span>
                         °
                         <a href="#" id="convert" onClick={onClickConvertTemp}>F</a>
                         </>

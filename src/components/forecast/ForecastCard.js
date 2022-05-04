@@ -1,9 +1,11 @@
 import React, {useContext} from 'react'
 import { ConvertTempContext } from '../../App'
-import { converToFerinhit } from '../utilites/convertTemp'
+import { converToFahrenheit } from '../utilites/convertTemp'
 
 
 const ForecastCard = ({id, day, min, max, condition ,icon}) => {
+  
+  // Used to covert tempture in multiple locations in the app.
   const [convertTemp, setConvertTemp] = useContext(ConvertTempContext)
 
   return (
@@ -12,8 +14,8 @@ const ForecastCard = ({id, day, min, max, condition ,icon}) => {
 
             
             <p className="day_temp">{convertTemp ? (<>
-              <span class="min">{converToFerinhit(min)}</span>°/
-              <span className="max">{converToFerinhit(max)}</span>°
+              <span class="min">{converToFahrenheit(min)}</span>°/
+              <span className="max">{converToFahrenheit(max)}</span>°
               <span className="convert">F</span>
             </>) : <>
             <span class="min">{min}</span>°/<span className="max">{max}</span>°<span className="convert">C</span>
